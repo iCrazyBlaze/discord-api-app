@@ -1,19 +1,138 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Hello World!</title>
-  </head>
-  <body>
-    <h1>Hello World!</h1>
-    <!-- All of the Node.js APIs are available in this renderer process. -->
-    We are using Node.js <script>document.write(process.versions.node)</script>,
-    Chromium <script>document.write(process.versions.chrome)</script>,
-    and Electron <script>document.write(process.versions.electron)</script>.
 
-    <script>
-      // You can also require other files to run in this process
-      require('./renderer.js')
-    </script>
-  </body>
+<script>
+	document.addEventListener("keydown", function (e) {
+		if (e.which === 123) {
+			require('remote').getCurrentWindow().toggleDevTools();
+		} else if (e.which === 116) {
+			location.reload();
+		}
+	});
+</script>
+
+
+
+<header>
+
+<font color="white"><center><h1 class="unselectable">Discord API Tools</h1></center></font>
+
+</header>
+<body>
+
+  <style>
+  body { background-image: url("assets/bg.png"); background-repeat: no-repeat; font: 150%/1.2em sans-serif;}
+
+          @font-face {
+              font-family: "Roboto";
+              font-weight: 400;
+              font-style: normal;
+              /* Because China can't load GFonts */
+              src: local("Roboto"), local("Roboto-Regular"),
+                   url("font/roboto-v16-latin-regular.woff2") format("woff2"),
+                   url("font/roboto-v16-latin-regular.woff") format("woff");
+              /* <=IE9? Sucks for you */
+          }
+
+  a.glow, a.glow:hover, a.glow:focus
+  {
+  	text-decoration: none;
+  	color: #ffa600;
+  	text-shadow: none;
+  	-webkit-transition: 500ms linear 0s;
+  	-moz-transition: 500ms linear 0s;
+  	-o-transition: 500ms linear 0s;
+  	transition: 500ms linear 0s;
+  	outline: 0 none;
+  }
+  a.glow:hover, a.glow:focus
+  {
+  	color: #fff;
+  	text-shadow: -1px 1px 8px #ffc, 1px -1px 8px #fff;
+  }
+  if (document.createElement("detect").style.textShadow === "") {
+  	document.getElementsByTagName("html")[0].className += " textshadow";
+  }
+
+
+
+
+	a.glow_white, a.glow_white:hover, a.glow_white:focus
+  {
+  	text-decoration: none;
+  	color: #fff;
+  	text-shadow: none;
+  	-webkit-transition: 500ms linear 0s;
+  	-moz-transition: 500ms linear 0s;
+  	-o-transition: 500ms linear 0s;
+  	transition: 500ms linear 0s;
+  	outline: 0 none;
+  }
+  a.glow_white:hover, a.glow_white:focus
+  {
+  	color: #fff;
+  	text-shadow: -1px 1px 8px #ffc, 1px -1px 8px #fff;
+  }
+  if (document.createElement("detect").style.textShadow === "") {
+  	document.getElementsByTagName("html")[0].className += " textshadow";
+  }
+
+
+
+
+  .footer {
+     position: fixed;
+     left: 0;
+     bottom: 0;
+     width: 100%;
+     background-color: #7289DA;
+     color: white;
+     text-align: center;
+  }
+
+
+  .unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+  </style>
+
+<center>
+
+<element class="unselectable">
+<a href="unofficial/permissions.html">
+<p><button style="line-height:40px;width:auto;height:40px;background-color:#2C2F33;cursor:pointer;padding:0;text-align:left;border:0;border-radius:5px;Roboto,arial,sans-serif;opacity:1" disabled><div><div style="margin:4px;width:32px;height:32px;float:left;border-radius:4px"><img style="width:100%;height:100%" src="assets/discord-favicon.ico"></div><div style="color:#000000;float:left;width:auto;padding-right:5px"><a href="unofficial/permissions.html" class="glow">Discord Permissions Calculator (OAuth2)</div></div></button></p>
+</a>
+
+<a href="unofficial/libs.html">
+<p><button style="line-height:40px;width:auto;height:40px;background-color:#2C2F33;cursor:pointer;padding:0;text-align:left;border:0;border-radius:5px;Roboto,arial,sans-serif;opacity:1" disabled><div><div style="margin:4px;width:32px;height:32px;float:left;border-radius:4px"><img style="width:100%;height:100%" src="assets/discord-favicon.ico"></div><div style="color:#000000;float:left;width:auto;padding-right:5px"><a href="unofficial/libs.html" class="glow">Unofficial API Library list and downloads</div></div></button></p>
+</a>
+
+<a href="unofficial/comparison.html">
+<p><button style="line-height:40px;width:auto;height:40px;background-color:#2C2F33;cursor:pointer;padding:0;text-align:left;border:0;border-radius:5px;Roboto,arial,sans-serif;opacity:1" disabled><div><div style="margin:4px;width:32px;height:32px;float:left;border-radius:4px"><img style="width:100%;height:100%" src="assets/discord-favicon.ico"></div><div style="color:#000000;float:left;width:auto;padding-right:5px"><a href="unofficial/comparison.html" class="glow">Unofficial API Comparison</div></div></button></p>
+</a>
+
+
+<a href="http://streamkit.discordapp.com/overlay">
+<p><button style="line-height:40px;width:auto;height:40px;background-color:#2C2F33;cursor:pointer;padding:0;text-align:left;border:0;border-radius:5px;Roboto,arial,sans-serif;opacity:1" disabled><div><div style="margin:4px;width:32px;height:32px;float:left;border-radius:4px"><img style="width:100%;height:100%" src="assets/discord-favicon.ico"></div><div style="color:#000000;float:left;width:auto;padding-right:5px"><a href="http://streamkit.discordapp.com/overlay" class="glow">Discord StreamKit Overlay </div></div></button></p>
+</a>
+
+
+</element>
+</center>
+</body>
+
+<element class="unselectable">
+<div class="footer">
+  <h2><p>Electron version <script>document.write(process.versions.electron)</script></p></h2>
+  <a href="http://icrazyblaze.github.io/" class="glow_white"><small><p>&copy;2017-2018 iCrazyBlaze</p></small></a>
+</div>
+</element>
 </html>
+<!--Electron is beautiful-->
